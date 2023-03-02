@@ -1,0 +1,148 @@
+doctype html
+html(lang='zh-cn')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='description' content='')
+    meta(name='author' content='')
+    title 电影推荐
+    // CSS FILES
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap' rel='stylesheet')
+    link(href='../css/bootstrap.min.css',rel='stylesheet')
+    link(href='css/bootstrap-icons.css',rel='stylesheet')
+    link(href='../css/tooplate-crispy-kitchen.css',rel='stylesheet')
+    
+    style
+      include css/bootstrap.min.css
+      include css/bootstrap-icons.css
+      include css/tooplate-crispy-kitchen.css
+  body
+    nav.navbar.navbar-expand-lg.bg-white.shadow-lg
+      .container
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        a.navbar-brand(onclick="window.location='/index'")
+          | 电影推荐
+        .d-lg-none
+          button.custom-btn.btn.btn-danger(type='button' data-bs-toggle='modal' data-bs-target='#BookingModal') 1
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav.mx-auto
+            li.nav-item
+              a.nav-link.active(onclick="window.location='/index'") 主页
+            li.nav-item
+              a.nav-link(onclick="window.location='/menu'") 目录
+        .d-none.d-lg-block
+          button.custom-btn.btn.btn-danger(type='submit' onclick="window.location='/loginpage'") 登录
+          button.custom-btn.btn.btn-danger(type='submit' onclick="window.location='/registerpage'") 注册
+    main
+      section.hero
+        .container
+          .row
+            .col-lg-5.col-12.m-auto
+              .heroText
+                h1.text-white.mb-lg-5.mb-3 影史 经典
+                .c-reviews.my-3.d-flex.flex-wrap.align-items-center
+                  .d-flex.flex-wrap.align-items-center
+                  p.text-white.w-100
+                    | 来自 
+                    strong 10,000+
+                    | 电影爱好者的评价
+            .col-lg-7.col-12
+              #carouselExampleCaptions.carousel.carousel-fade.hero-carousel.slide(data-bs-ride='carousel')
+                .carousel-inner
+                  .carousel-item.active
+                    .carousel-image-wrap
+                      img.img-fluid.carousel-image(src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fthing_review%2Fl%2Fpublic%2Fp5949058.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1675716495&t=7e3856f33b6f81905a812b9c916bf79a' alt='')
+                    .carousel-caption
+                      .d-flex.align-items-center
+                        h4.hero-text 魔戒
+                      .d-flex.flex-wrap.align-items-center
+                        h5.reviews-text.mb-0.me-3 4.85/5
+                        .reviews-stars
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star.reviews-icon
+                  .carousel-item
+                    .carousel-image-wrap
+                      img.img-fluid.carousel-image(src='https://img1.baidu.com/it/u=2067065990,1888091834&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500' alt='')
+                    .carousel-caption
+                      .d-flex.align-items-center
+                        h4.hero-text 教父
+                      .d-flex.flex-wrap.align-items-center
+                        h5.reviews-text.mb-0.me-3 4.93/5
+                        .reviews-stars
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star.reviews-icon
+                  .carousel-item
+                    .carousel-image-wrap
+                      img.img-fluid.carousel-image(src='https://img2.baidu.com/it/u=3947559,225543001&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500' alt='')
+                    .carousel-caption
+                      .d-flex.align-items-center
+                        h4.hero-text 银翼杀手
+                      .d-flex.flex-wrap.align-items-center
+                        h5.reviews-text.mb-0.me-3 4.92/5
+                        .reviews-stars
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star-fill.reviews-icon
+                          i.bi-star.reviews-icon
+                button.carousel-control-prev(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='prev')
+                  span.carousel-control-prev-icon(aria-hidden='true')
+                  span.visually-hidden Previous
+                button.carousel-control-next(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='next')
+                  span.carousel-control-next-icon(aria-hidden='true')
+                  span.visually-hidden Next
+        .video-wrap
+          .custom-video
+            img.img-fluid.carousel-image(src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202006%2F25%2F20200625172126_eyzvs.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1675695572&t=07f8e192768a775580ae90af234eaffe' alt='')
+        .overlay
+      section.menu.section-padding
+        .container
+          .row
+            .col-12
+              h2.text-center.mb-lg-5.mb-4 热门 推荐
+          .row
+            input(type='text',style="visibility: hidden;width:0px; height:0px;",name='userid', value=userid)
+            table( cellpadding="2" cellspacing="2")
+              tr
+               -for(var i=0;i<movieinfo.length;i++)
+                td
+                  .col-lg-6
+                    .menu-thumb
+                      .menu-image-wrap
+                        img.img-fluid.menu-image(src=movieinfo[i].picture alt='')
+                      .menu-info.d-flex.flex-wrap.align-items-center
+
+                        h4.mb-0 #{ movieinfo[i].moviename }
+                        input(type='text',style="visibility: hidden;width:0px; height:0px;",name='movieid', value=movieinfo[i].movieid)
+
+                       -if((i+1)%2==0)
+                         tr
+      section.BgImage
+      section.news.section-padding
+        .container
+          .row
+    footer.site-footer.section-padding
+      .container
+        .row
+        // row ending
+        // container ending
+    script(src='js/jquery.min.js')
+    script(src='js/bootstrap.bundle.min.js')
+    script(src='js/custom.js')
+    script
+      include js/jquery.min.js
+      include js/bootstrap.bundle.min.js
+      include js/custom.js
+
+
+
+

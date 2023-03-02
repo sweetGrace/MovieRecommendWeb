@@ -1,0 +1,19 @@
+{
+  "name": "mr_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "html": "^1.0.0",
+    "jade": "^1.11.0",
+    "mysql": "^2.18.1"
+  }
+}

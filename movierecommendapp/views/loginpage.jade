@@ -1,0 +1,83 @@
+doctype html
+html(lang='zh-cn')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='description' content='')
+    meta(name='author' content='')
+    title 注册
+    // CSS FILES
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap' rel='stylesheet')
+    link(href='css/bootstrap.min.css' rel='stylesheet')
+    link(href='css/bootstrap-icons.css' rel='stylesheet')
+    link(href='css/tooplate-crispy-kitchen.css' rel='stylesheet')
+    style
+      include css/bootstrap.min.css
+      include css/bootstrap-icons.css
+      include css/tooplate-crispy-kitchen.css
+  body
+    nav.navbar.navbar-expand-lg.bg-white.shadow-lg
+      .container
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        a.navbar-brand(onclick="window.location='/index'")
+          | 电影推荐
+        .d-lg-none
+          button.custom-btn.btn.btn-danger(type='button' data-bs-toggle='modal' data-bs-target='#BookingModal') 1
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav.mx-auto
+            li.nav-item
+              a.nav-link(onclick="window.location='/index'") 主页
+            li.nav-item
+              a.nav-link(onclick="window.location='/menu'") 目录
+        .d-none.d-lg-block
+          button.custom-btn.btn.btn-danger(type='submit' onclick="window.location='/loginpage'") 登录
+          button.custom-btn.btn.btn-danger(type='submit' onclick="window.location='/registerpage'") 注册
+    main
+      header.site-header.site-menu-header
+        .container
+          .row
+            .col-lg-10.col-12.mx-auto
+              h1.text-white 用户 登录
+              strong.text-white 登录账号后即可享受电影推荐功能
+        .overlay
+      section.menu.section-padding
+        .container
+          .row
+            .modal-dialog.modal-dialog-centered.modal-xl
+              .modal-content
+                .modal-header
+                  h3.mb-0 用户登录：
+                  button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                .modal-body.d-flex.flex-column.justify-content-center
+                  .booking
+                    form.booking-form.row(role='form' action='/login' method='post')
+                      .col-12
+                        label.form-label(for='name') 账号
+                        input#username.form-control(type='text' name='username' placeholder='请输入账号' required='')
+                      .col-12
+                        label.form-label(for='name') 密码
+                        input#pwd.form-control(type='password' name='pwd' placeholder='请输入密码' required='')
+                      //
+                        <div class="col-lg-6 col-12">
+                        <label for="name" class="form-label">确认密码</label>
+                        <input type="password" name="pwd_cfm" id="pwd_cfm" class="form-control" placeholder="请再次输入密码" required>
+                        </div>
+                      .col-lg-4.col-12.ms-auto
+                        button.form-control(type='submit' onclick="window.location='/loginpage'") 登录
+                .modal-footer
+    footer.site-footer.section-padding
+      .container
+        .row
+        // row ending
+        // container ending
+        // JAVASCRIPT FILES
+        script(src='js/jquery.min.js')
+        script(src='js/bootstrap.bundle.min.js')
+        script(src='js/custom.js')
+        script
+          include js/jquery.min.js
+          include js/bootstrap.bundle.min.js
+          include js/custom.js
